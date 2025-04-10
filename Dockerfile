@@ -5,10 +5,10 @@ FROM golang:1.24-alpine
 WORKDIR /app
 
 # Copy go.mod and go.sum to download dependencies
-COPY go.mod go.sum ./
+# COPY go.mod go.sum ./
 
 # Download all dependencies
-RUN go mod download
+# RUN go mod download
 
 # Copy the source code into the container
 COPY . .
