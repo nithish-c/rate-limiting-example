@@ -29,7 +29,7 @@ func fetchMessage(url string, results chan<- string, wg *sync.WaitGroup) {
 
 func main() {
 	url := "http://localhost:8080/hello" // Replace with your API endpoint
-	numRequests := 100                   // Number of requests to make
+	numRequests := 10000                 // Number of requests to make
 
 	results := make(chan string, numRequests)
 	var wg sync.WaitGroup
@@ -49,9 +49,9 @@ func main() {
 
 	fmt.Println("Stress test completed.")
 	fmt.Println("Duration:", duration)
-	fmt.Println("Results:")
+	// fmt.Println("Results:")
 
-	for result := range results {
-		fmt.Println(result)
-	}
+	// for result := range results {
+	// 	fmt.Println(result)
+	// }
 }
